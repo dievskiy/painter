@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-7 col-md-12 col-sm-12 col-12 p-0 m-0 border border-primary" style="height: 30rem;"
+                 id="canvas-container">
+                <canvas id="cfd" class="table-bordered"></canvas>
+
+            </div>
+            <div class="col-lg-5 mt-md-5 mt-lg-0 col-12 col-md-12 col-sm-12 d-flex flex-column justify-content-center align-items-center p-0">
+                <label for="color-picker" class="m-2"></label><input
+                    id="color-picker" value="#276cb8"/>
+                <button class="btn-outline-primary m-2 btn w-50" id="clear">Clear</button>
+                <button class="btn-outline-primary m-2 btn w-50" id="undo">Undo</button>
+                <button class="btn-outline-primary m-2 btn w-50" id="redo">Redo</button>
+                <button id="publish" type="button" class="m-2 btn-primary btn w-50">Publish
+                </button>
+                <span class="w-50 text-center no-select" style="font-size:.8rem;">By clicking publish you agree to our
+                <a target="_blank" rel="noopener noreferrer"  class="no-select" href="{{ url_for('main.privacy') }}">Privacy Policy</a>
+                    </span>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/init.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/canvas-drawing.js') }}"></script>
+
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='css/spectrum.css') }}">
+    <script src="{{ url_for('static', filename='js/spectrum.js') }}"></script>
+
+{% endblock %}
