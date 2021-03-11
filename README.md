@@ -1,5 +1,5 @@
 This is 1-day project to practice aws skills. The idea of the app is to allow users to draw and publish pictures online (using amazon s3 service)
-so that they can share it using only link. [demo](http://webdrawer.tech)
+so that they can share it using only link. ~~[demo](http://webdrawer.tech)~~
 
 # how to build
 To run this app, configure env variables (bucket name and aws credentials if needed) in .env file and simply use:
